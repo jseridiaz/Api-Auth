@@ -3,12 +3,14 @@ const express = require('express')
 const { connectDB } = require('./src/config/db')
 const ropaRoute = require('./src/api/routes/ropa.routes')
 const conjuntoRoutes = require('./src/api/routes/conjunto.routes')
+const userRoute = require('./src/api/routes/user.routes')
 const app = express()
 const PORT = 3000
 
 app.use(express.json())
 connectDB()
 
+app.use('/user', userRoute)
 app.use('/ropa', ropaRoute)
 app.use('/conjunto', conjuntoRoutes)
 
