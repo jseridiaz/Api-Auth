@@ -10,7 +10,7 @@ app.use(express.json())
 connectDB()
 
 app.use('/ropa', ropaRoute)
-// app.use('/conjunto', conjuntoRoutes)
+app.use('/conjunto', conjuntoRoutes)
 
 app.use('*', (req, res, next) => {
   return res.status(400).json('Route not found')
