@@ -15,7 +15,8 @@ const userSchema = new mongoose.Schema(
       required: true,
       default: 'user',
       trim: true
-    }
+    },
+    producto_Favorito: [{ type: mongoose.Types.ObjectId, ref: 'conjuntos' }]
   },
   { timestamps: true, collection: 'users' }
 )

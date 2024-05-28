@@ -3,8 +3,31 @@ const User = require('../models/user.model')
 const bcrypt = require('bcrypt')
 
 const getUser = async (req, res, next) => {
-  const allUsers = await User.find()
+  const allUsers = await User.find().populate({
+    path: 'producto_Favorito',
+    populate: {
+      path: 'ropa',
+      model: 'ropa'
+    }
+  })
   return res.status(200).json(allUsers)
+}
+const putUser = async (req, res, next) => {
+  const { id } = req.params
+  const oldUser = await User.findById(id)
+  const newUser = new User(req.body)
+  newUser._id = id
+  newUser.producto_Favorito = [
+    ...oldUser.producto_Favorito,
+    ...newUser.producto_Favorito
+  ]
+
+  if (req.body.password !== undefined) {
+    newUser.password = bcrypt.hashSync(req.body.password, 10)
+  }
+  const updatedUser = await User.findByIdAndUpdate(id, newUser, { new: true })
+
+  return res.status(200).json(updatedUser)
 }
 const register = async (req, res, next) => {
   try {
@@ -44,9 +67,10 @@ const login = async (req, res, next) => {
     return res.status(400).json('Error by loging process. Error Type: ' + err)
   }
 }
+
 const deleteUser = async (req, res, next) => {
   const { id } = req.params
   const userDeleted = await User.findByIdAndDelete(id)
   return res.status(200).json(userDeleted)
 }
-module.exports = { getUser, register, login, deleteUser }
+module.exports = { getUser, register, login, putUser, deleteUser }

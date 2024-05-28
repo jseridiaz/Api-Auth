@@ -1,4 +1,5 @@
 require('dotenv').config()
+const cors = require('cors')
 const express = require('express')
 const { connectDB } = require('./src/config/db')
 const ropaRoute = require('./src/api/routes/ropa.routes')
@@ -7,6 +8,7 @@ const userRoute = require('./src/api/routes/user.routes')
 const app = express()
 const PORT = 3000
 
+app.use(cors())
 app.use(express.json())
 connectDB()
 

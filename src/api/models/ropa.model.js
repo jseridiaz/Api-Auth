@@ -4,7 +4,12 @@ const ropaSchema = new mongoose.Schema(
   {
     nombre: { type: String, required: true, trim: true },
     marca: { type: String, required: true, trim: true },
-    categoria: { type: String, required: true, trim: true },
+    categoria: {
+      type: String,
+      required: true,
+      enum: ['Camisetas', 'Pantalones', 'Abrigos', 'Zapatillas', 'Accesorios'],
+      trim: true
+    },
     lugar: { type: String, trim: true },
     color: { type: String, trim: true, required: true, default: 'White' },
     uso: {
