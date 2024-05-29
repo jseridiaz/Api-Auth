@@ -107,3 +107,14 @@ Por último tendremos la opción de registrarnos en la plataforma y logearnos un
 **NOTA**: Hay que registrarse primero antes de poder realizar el login.
 
 El usuario se habrá creado y el usuario tendrá permisos para poder eliminar su propio usuario y publicar ropa y colecciones.
+
+## Eliminarse como usuario - Método delete
+
+Por último es posible eliminar su propio usuario una vez se ha registrado. Para esto hay que estar logeado y utilizar el endpoint siguiente:
+
+```sh
+/user/:id
+```
+
+el **:id** lo obtenemos en el registro, obteniendo en la consola de INSOMNIA nuestro id con el siguiente formato:
+{"/:id": **"7276dadawd17dwad1a2d51da7"**}
