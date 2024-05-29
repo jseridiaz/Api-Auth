@@ -24,19 +24,17 @@ const updateConjunto = async (req, res, next) => {
     let newConjunto = new Conjunto(req.body)
 
     newConjunto._id = id
-    if (!req.body.ropa) {
-      newConjunto.ropa = [...oldConjunto.ropa]
-    } else {
-      newConjunto = await Conjunto.updateOne(
-        { _id: id },
-        {
-          nombre: req.body.nombre || oldConjunto.nombre,
-          uso: req.body.uso || oldConjunto.uso,
-          $addToSet: { ropa: { $each: req.body.ropa } },
-          precio: req.body.precio || oldConjunto.precio
-        }
-      )
-    }
+
+    newConjunto = await Conjunto.updateOne(
+      { _id: id },
+      {
+        nombre: newConjunto.nombre || oldConjunto.nombre,
+        uso: newConjunto.uso || oldConjunto.uso,
+        $addToSet: { ropa: { $each: newConjunto.ropa } },
+        precio: newConjunto.precio || oldConjunto.precio
+      }
+    )
+
     const conjuntoUpdated = await Conjunto.findByIdAndUpdate(id, newConjunto, {
       new: true
     })

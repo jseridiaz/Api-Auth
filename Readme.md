@@ -10,6 +10,16 @@ La API provee de todos las colecciones y la ropa que se encuentran en la base de
 Para Acceder a ellos se realiza a través de la solicitud de la siguiente Url y endpoints que se encuentran a continuación.
 **Recuerda**: Para obtener los datos hay que pasar a JSON la respuesta recibida.
 
+## Indice
+
+- Base URL
+  -ENDPOINTS :
+  ***
+  - ENDPOINT ROPA - GET y POST
+  - ENDPOINT CONJUNTO - GET
+  ***
+- Registrarse y logearse
+
 ## Base url:
 
 - La URL base de la api es la siguiente: http://localhost:3000
