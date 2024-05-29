@@ -8,10 +8,10 @@ const {
 } = require('../controllers/user.controllers')
 
 const userRoute = require('express').Router()
-userRoute.get('/', isAuthAdmin, getUser)
+userRoute.get('/', [isAuthAdmin], getUser)
 userRoute.post('/login', login)
-userRoute.put('/:id', isAuthAdmin, putUser)
+userRoute.put('/:id', [isAuthAdmin], putUser)
 userRoute.post('/register', register)
-userRoute.delete('/:id', isAuth, deleteUser)
+userRoute.delete('/:id', [isAuth], deleteUser)
 
 module.exports = userRoute

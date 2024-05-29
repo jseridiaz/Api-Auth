@@ -9,7 +9,7 @@ const {
 const ropaRoute = require('express').Router()
 
 ropaRoute.get('/', getRopa)
-ropaRoute.post('/', isAuth, postRopa)
+ropaRoute.post('/', [isAuth], postRopa)
 ropaRoute.put('/:id', updateRopa)
 ropaRoute.delete('/:id', deleteRopa)
 

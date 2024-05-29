@@ -9,7 +9,7 @@ const {
 const conjuntoRoutes = require('express').Router()
 
 conjuntoRoutes.get('/', getConjuntos)
-conjuntoRoutes.post('/', isAuthAdmin, postConjunto)
+conjuntoRoutes.post('/', [isAuthAdmin], postConjunto)
 conjuntoRoutes.put('/:id', updateConjunto)
 conjuntoRoutes.delete('/:id', deleteConjunto)
 
