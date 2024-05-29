@@ -127,4 +127,4 @@ Por último es posible eliminar su propio usuario una vez se ha registrado. Para
 ```
 
 el **:id** lo obtenemos en el registro, obteniendo en la consola de INSOMNIA nuestro id con el siguiente formato:
-{"/:id": **"7276dadawd17dwad1a2d51da7"**}
+{"/:id": **"7276dadawd17dwad1a2d51da7"**}.
