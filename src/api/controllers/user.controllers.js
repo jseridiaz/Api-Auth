@@ -34,7 +34,7 @@ const register = async (req, res, next) => {
     const newUser = new User({
       userName: req.body.userName,
       password: req.body.password,
-      rol: req.body.rol
+      rol: 'user'
     })
 
     const duplicatedUser = await User.findOne({ userName: req.body.userName })
