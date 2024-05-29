@@ -53,10 +53,10 @@ Se permite utilizar el método POST usando insomnia ya que no existe página Fro
 > _ "nombre": Tipo String,
 > _ "marca": Tipo String,
 >
-> - "categoria": Tipo String,
-> - "talla": Tipo String,
-> - "uso": Tipo String,
->   "estacion": Tipo String,
+> - "categoria": Tipo String, un unico valor aceptado-> ['Camisetas', 'Pantalones', 'Abrigos', 'Zapatillas', 'Accesorios']
+> - "talla": Tipo String, Valor Aceptado ->['xs', 's', 'm', 'l', 'xl', 'xxl']
+> - "uso": Tipo String, Aceptado-> ['Deportivo', 'Gala', 'Fiesta', 'Urbano']
+>   "estacion": Tipo String, Aceptado -> ['Invierno', 'Otoño', 'Primavera', 'Verano']
 > - "color": Tipo String,
 > - "precio": Tipo Number
 
