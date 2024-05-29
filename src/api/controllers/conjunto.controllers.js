@@ -21,11 +21,23 @@ const updateConjunto = async (req, res, next) => {
   try {
     const { id } = req.params
     const oldConjunto = await Conjunto.findById(id)
-    const newConjunto = new Conjunto(req.body)
+    let newConjunto = new Conjunto(req.body)
 
     newConjunto._id = id
-    newConjunto.ropa = [...oldConjunto, ...newConjunto]
-
+    if (!req.body.ropa) {
+      //*Valido newConjunto.ropa= [...oldConjunto.ropa]
+      newConjunto = await Conjunto.updateOne(
+        { _id: id },
+        { $addToSet: { ropa: { $each: oldConjunto.ropa } } }
+      )
+    } else {
+      newConjunto = await Conjunto.updateOne(
+        { _id: id },
+        {
+          $addToSet: { ropa: { $each: req.body.ropa } }
+        }
+      )
+    }
     const conjuntoUpdated = await Conjunto.findByIdAndUpdate(id, newConjunto, {
       new: true
     })

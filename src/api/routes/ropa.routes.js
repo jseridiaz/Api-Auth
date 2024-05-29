@@ -1,3 +1,4 @@
+const { isAuth } = require('../../middlewares/auth.middlewares')
 const {
   getRopa,
   postRopa,
@@ -8,7 +9,7 @@ const {
 const ropaRoute = require('express').Router()
 
 ropaRoute.get('/', getRopa)
-ropaRoute.post('/', postRopa)
+ropaRoute.post('/', isAuth, postRopa)
 ropaRoute.put('/:id', updateRopa)
 ropaRoute.delete('/:id', deleteRopa)
 

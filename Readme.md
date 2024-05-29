@@ -22,7 +22,7 @@ Para Acceder a ellos se realiza a través de la solicitud de la siguiente Url y 
 /conjunto - Obtención de todos las colecciones
 ```
 
-### /ropa
+### /ropa - Metodo GET
 
 Con este Endpoint se obtendra un array de objetos con **todos los los artículos registrados por la Api** y todos sus datos. A continuación se muestra un ejemplo de como se obtendrán los datos;
 
@@ -41,6 +41,28 @@ Con este Endpoint se obtendra un array de objetos con **todos los los artículos
 > "color": "White",
 > "talla": "m"
 > }
+
+### /ropa - Método Post
+
+Para utilizar este Método se requiere estar logeado.
+
+Se permite utilizar el método POST usando insomnia ya que no existe página Front. A través de este endpoint y usando el método POST,se publican artículos de ropa. Habrá que enviar un **Objeto en formato Json** con las siguientes propiedades y con el valor cumplimentado con vuestros datos con el correspondiente tipado tipado:
+
+> {
+
+> _ "nombre": Tipo String,
+> _ "marca": Tipo String,
+>
+> - "categoria": Tipo String,
+> - "talla": Tipo String,
+> - "uso": Tipo String,
+>   "estacion": Tipo String,
+> - "color": Tipo String,
+> - "precio": Tipo Number
+
+> }
+
+**Nota**: Las propiedades que comienzan en asteriscos son obligatorias de rellenar en el envío del objeto.
 
 ### /conjunto
 
@@ -84,4 +106,4 @@ Por último tendremos la opción de registrarnos en la plataforma y logearnos un
 
 **NOTA**: Hay que registrarse primero antes de poder realizar el login.
 
-El usuario se habrá creado y trás el registro se habrá creado el usuario con permisos de usuario que solo permitirá eliminar a su propio usuario.
+El usuario se habrá creado y el usuario tendrá permisos para poder eliminar su propio usuario y publicar ropa y colecciones.

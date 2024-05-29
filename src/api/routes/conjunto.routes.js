@@ -1,3 +1,4 @@
+const { isAuthAdmin } = require('../../middlewares/auth.middlewares')
 const {
   getConjuntos,
   postConjunto,
@@ -8,7 +9,7 @@ const {
 const conjuntoRoutes = require('express').Router()
 
 conjuntoRoutes.get('/', getConjuntos)
-conjuntoRoutes.post('/', postConjunto)
+conjuntoRoutes.post('/', isAuthAdmin, postConjunto)
 conjuntoRoutes.put('/:id', updateConjunto)
 conjuntoRoutes.delete('/:id', deleteConjunto)
 
