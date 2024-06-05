@@ -41,6 +41,7 @@ const register = async (req, res, next) => {
     if (duplicatedUser) {
       return res.status(400).json('Usuario ya existe')
     }
+    
     const userSaved = await newUser.save()
 
     return res.status(201).json(userSaved)
