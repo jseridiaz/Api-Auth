@@ -1,13 +1,14 @@
-# Introduccion Api concesionarios y vehículos
+# Introduccion Api ropa y colecciones
 
 Aquí encontrarás todo lo necesario para encontrar las rutas para obtener los datos de la Api de ropa y colecciones.
 
 La API provee de todos las colecciones y la ropa que se encuentran en la base de datos. Además encontramos toda la información de los articulos y colecciones, comprendiendo desde el precio hasta la marca del proveedor. Los datos que se podrán obtener de esta api de ellos son los siguientes:
 
-- Nombre del artículo, Marca , Color,tallas, Uso, Estación del año y precios
+- Nombre del artículo, Marca, Color, tallas, Uso, Estación del año y precios
 - Nombre de la colección o conjunto, Uso, artículos que incluye la colección y precio total del conjunto.
 
 Para Acceder a ellos se realiza a través de la solicitud de la siguiente Url y endpoints que se encuentran a continuación.
+
 **Recuerda**: Para obtener los datos hay que pasar a JSON la respuesta recibida.
 
 ## Indice
@@ -22,7 +23,7 @@ Para Acceder a ellos se realiza a través de la solicitud de la siguiente Url y 
 
 ## Base url:
 
-- La URL base de la api es la siguiente: http://localhost:3000
+- La URL base de la api es la siguiente: https://api-auth-r055hg3md-danielrv21s-projects.vercel.app/
 - A continuación se detallaran los endpoints para conseguir los datos del que dispone la Api.
 
 ## ENDPOINTS PARA BUSQUEDA DE LA ROPA:
